@@ -1,0 +1,9 @@
+site :opscode
+
+cookbook "ark", github: "bryanwb/chef-ark"
+cookbook 'openssl', '~> 1.0.0'
+cookbook 'postgresql', github: 'hoshposh/postgresql'
+cookbook 'java', git: 'git://git.qalab.cam.novell.com/epmdev-vagrant/java-cookbook.git'
+cookbook 'tomcat', git: 'git://github.com/kchendil/Tomcat.git'
+cookbook 'mysql', git: 'git://github.com/opscode-cookbooks/mysql.git'
+cookbook 'maven'

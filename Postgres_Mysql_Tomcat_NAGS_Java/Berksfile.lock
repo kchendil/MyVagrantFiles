@@ -1,0 +1,7 @@
+cookbook 'ark', :git => 'git://github.com/bryanwb/chef-ark.git', :ref => '991613ebcb4fbb3e0fd5f22863bd1110b027d7fe'
+cookbook 'openssl', :locked_version => '1.0.2'
+cookbook 'postgresql', :git => 'git://github.com/hoshposh/postgresql.git', :ref => 'cdeb1ccca7cfd5564706315a8d95986658b5c300'
+cookbook 'java', :git => 'git://git.qalab.cam.novell.com/epmdev-vagrant/java-cookbook.git', :ref => '276949ed9e8a1896a97f689a2b973b90b1577f24'
+cookbook 'maven', :locked_version => '0.15.0'
+cookbook 'windows', :locked_version => '1.8.4'
+cookbook 'chef_handler', :locked_version => '1.1.4'

@@ -1,0 +1,46 @@
+<settings>
+  <interactiveMode>false</interactiveMode>
+  <pluginGroups>
+    <!--<pluginGroup>org.codehaus.cargo</pluginGroup>-->
+    <pluginGroup>org.jvnet.hudson.tools</pluginGroup>
+    <pluginGroup>com.novell.ism.build</pluginGroup>
+    <pluginGroup>org.apache.openejb.maven</pluginGroup>
+    <pluginGroup>org.apache.tomcat.maven</pluginGroup>
+  </pluginGroups>
+  <mirrors>
+    <mirror>
+      <!-- This sends everything else to /public -->
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>http://nexus.qalab.cam.novell.com/nexus/content/groups/public</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+      	  <id>central</id>
+      	  <url>http://central</url>
+      	  <releases><enabled>true</enabled></releases>
+      	  <snapshots><enabled>true</enabled></snapshots>
+      	</repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+    	    <id>central</id>
+      	  <url>http://central</url>
+      	  <releases><enabled>true</enabled></releases>
+      	  <snapshots><enabled>true</enabled></snapshots>
+    	  </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+    <activeProfile>cargotools</activeProfile>
+  </activeProfiles>
+  <servers>
+  </servers>
+</settings>
+
