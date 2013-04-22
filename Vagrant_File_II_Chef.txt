@@ -1,0 +1,68 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+
+
+
+
+Vagrant::Config.run do |config|
+  config.vm.define :idm402ae_1 do |idm402ae_1_config|
+    idm402ae_1_config.vm.box = "idm402ae_1"
+    #idm402ae_1_config.vm.forward_port 8080, 8080
+	 idm402ae_1_config.vm.box_url = "d:\\vm\\update2\\package.box"
+  #config.vm.provision :shell, :inline => "cd /home/vagrant/IDM402AE; mount -o loop Identity_Manager_4.0.2_Linux_Advanced.iso test/;"
+  idm402ae_1_config.vm.provision :shell, :inline => "mkdir -p /home/vagrant/IDM402AE/test/; mount -o loop /vagrant/vendor/cookbooks/Identity_Manager_4.0.2_Linux_Advanced.iso /home/vagrant/IDM402AE/test/"
+   idm402ae_2_config.vm.provision :chef_solo do |chef|
+    
+   chef.cookbooks_path = "vendor/cookbooks"    
+
+    chef.add_recipe("analyzer") 
+   chef.add_recipe("edirectory") 
+   chef.add_recipe("idm") 
+   chef.add_recipe("imanager") 
+  # chef.add_recipe("jboss") 
+  # chef.add_recipe("postgres") 
+  # chef.add_recipe("rbpm") 
+  # chef.add_recipe("reporting") 
+   chef.add_recipe("eas") 
+   chef.add_recipe("rma") 
+    chef.add_recipe("designer") 
+   #chef.json = {
+   #:designer => { :designer_locale => "de"}	
+   #}
+	
+	
+  end 
+  end
+
+  config.vm.define :idm402ae_2 do |idm402ae_2_config|
+    idm402ae_2_config.vm.box = "idm402ae_2"
+	 idm402ae_2_config.vm.box_url = "d:\\vm\\update2\\package.box"
+  #config.vm.provision :shell, :inline => "cd /home/vagrant/IDM402AE; mount -o loop Identity_Manager_4.0.2_Linux_Advanced.iso test/;"
+  idm402ae_2_config.vm.provision :shell, :inline => "mkdir -p /home/vagrant/IDM402AE/test/; mount -o loop /vagrant/vendor/cookbooks/Identity_Manager_4.0.2_Linux_Advanced.iso /home/vagrant/IDM402AE/test/"
+   # idm402ae_2_config.vm.forward_port 3306, 3306
+   
+    idm402ae_2_config.vm.provision :chef_solo do |chef|
+    
+   chef.cookbooks_path = "vendor/cookbooks"    
+
+  #  chef.add_recipe("analyzer") 
+  # chef.add_recipe("edirectory") 
+  # chef.add_recipe("idm") 
+  # chef.add_recipe("imanager") 
+   chef.add_recipe("jboss") 
+   chef.add_recipe("postgres") 
+   chef.add_recipe("rbpm") 
+   chef.add_recipe("reporting") 
+  # chef.add_recipe("eas") 
+  # chef.add_recipe("rma") 
+    chef.add_recipe("designer") 
+   #chef.json = {
+   #:designer => { :designer_locale => "de"}	
+   #}
+	
+	
+  end 
+  end
+end
